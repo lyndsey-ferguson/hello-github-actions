@@ -7,6 +7,11 @@ try {
   console.log(`payload: ${payload}`);
   const actor = github.context.payload.issue.user.login;
   console.log(`actor: ${actor}`);
+
+  const myToken = core.getInput('myToken');
+  const octokit = new github.GitHub(myToken);
+  console.log(`result of getting octokit.issue: ${octokit.issue}`);
+
 } catch(error) {
   core.setFailed(error.message);
 }
