@@ -8,7 +8,7 @@ jobs:
     name: A job to review a new issue for fulfilled requirements
     steps:
       - uses: actions/checkout@master
-      - uses: ./review-new-issue-action@v1
+      - uses: ./review-new-issue-action
         name: Review New Issue Step
         id: review
 
