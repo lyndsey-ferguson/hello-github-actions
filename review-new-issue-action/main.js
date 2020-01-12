@@ -34,6 +34,12 @@ async function run() {
       });
     }
 
+    octokit.issues.addLabels({
+        ...github.context.repo,
+        issue_number: issueNumber,
+        labels: [supportQuestionLabelString]
+    });
+
     console.log(`issueBody: ${issueBody}`);
 
     octokit.issues.createComment({
