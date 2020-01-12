@@ -10,8 +10,13 @@ try {
 
   const myToken = core.getInput('myToken');
   const octokit = new github.GitHub(myToken);
-  console.log(`result of getting octokit.issue: ${octokit.issue}`);
-
+  console.log(`result of getting context.repo: ${JSON.stringify(github.context.repo)}`);
+  // octokit.issues.createComment({
+  //     github.context.repo.owner,
+  //     repo,
+  //     issue_number,
+  //     body
+  // })
 } catch(error) {
   core.setFailed(error.message);
 }
