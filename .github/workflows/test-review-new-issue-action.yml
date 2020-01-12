@@ -13,4 +13,5 @@ jobs:
       - uses: ./review-new-issue-action
         name: Review New Issue Step
         id: review
-
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

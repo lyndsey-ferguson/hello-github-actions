@@ -4,7 +4,7 @@ const github = require('@actions/github');
 try {
   console.log('Review New Issue: active!');
 
-  const myToken = core.getInput('myToken');
+  const myToken = core.getInput('repo-token');
   const octokit = new github.GitHub(myToken);
   const issue = github.context.payload.issue;
   const issueId = issue.id;
