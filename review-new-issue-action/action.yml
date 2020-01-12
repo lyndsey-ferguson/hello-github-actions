@@ -2,5 +2,5 @@ name: 'Review New Issue'
 description: 'Reviews an issue to ensure that all required data is provided'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'main.js'
 
