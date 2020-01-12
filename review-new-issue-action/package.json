@@ -1,0 +1,15 @@
+{
+  "name": "review-new-issue-action",
+  "version": "1.0.0",
+  "description": "Reviews an issue to ensure that all required data is provided",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1"
+  }
+}
