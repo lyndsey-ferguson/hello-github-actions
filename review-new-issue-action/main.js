@@ -10,8 +10,6 @@ async function run() {
     const issue = github.context.payload.issue;
     const issueNumber = issue.number;
   
-    console.log(`issue id: ${issueId}`);
-  
     octokit.issues.createComment({
       ...github.context.repo,
       issue_number: issueNumber,
