@@ -9,5 +9,6 @@ jobs:
     steps:
       - name: Review New Issue Step
         id: review
-        uses: actions/review-new-issue-action@v1
+        uses: actions/checkout@master
+        uses: ./review-new-issue-action
 
