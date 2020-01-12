@@ -3,13 +3,11 @@ const github = require('@actions/github');
 
 try {
   console.log('Review New Issue: active!');
-  const payload = JSON.stringify(github.context.payload);
-  console.log(`payload: ${payload}`);
 
   const myToken = core.getInput('myToken');
   const octokit = new github.GitHub(myToken);
-  const repoOwner = github.context.repo.owner;
-  const repoName = github.context.repo.repo;
+  const issue = github.context.payload.issue;
+  console.log(`issue info: ${JSON.stringify(issue)}`);
   const issueId = github.context.payload.issue.id;
 
   octokit.issues.createComment({
