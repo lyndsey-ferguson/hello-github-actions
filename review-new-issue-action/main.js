@@ -16,6 +16,10 @@ async function run() {
       ...github.context.repo,
       issue_number: issueId,
       body: "*I see you*"
+    }).then(({ data, headers, status }) => {
+      // handle data
+    }).catch(err => {
+      console.log(err)
     });
   
   } catch(error) {
