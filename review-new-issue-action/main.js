@@ -22,7 +22,15 @@ async function run() {
         // handle data
         console.log(`getLabel data: ${data}`);
       }).catch(err => {
-        console.log(err);
+        if (err.status === 404) {
+          octokit.issues.createLabel({
+            ...github.context.repo,
+            name: supportQuestionLabelString,
+            color: 'ad751e'
+          });
+        } else {
+          console.log(err);
+        }
       });
     }
 
