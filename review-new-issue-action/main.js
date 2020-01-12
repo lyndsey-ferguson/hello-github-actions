@@ -3,8 +3,9 @@ const github = require('@actions/github');
 
 try {
   console.log('Review New Issue: active!');
-  const context = JSON.stringify(github.context);
-  console.log(`actor: ${context['payload']['actor']}`);
+
+  const actor = github.context.payload.actor;
+  console.log(`actor: ${actor}`);
 } catch(error) {
   core.setFailed(error.message);
 }
