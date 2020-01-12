@@ -17,7 +17,7 @@ try {
       repoName,
       issueId,
       "*I see you*"
-  })
+  });
 } catch(error) {
   core.setFailed(error.message);
 }
