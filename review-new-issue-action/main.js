@@ -12,8 +12,8 @@ async function run() {
   
     const issueBody = issue.body;
     const isSupportQuestion = issueBody.includes('### Question Checklist');
+    const supportQuestionLabelString = ':question: Question'
     if (isSupportQuestion) {
-      const supportQuestionLabelString = ':question: Question'
       let supportQuestionLabel = null
       octokit.issues.getLabel({
         ...github.context.repo,
