@@ -13,7 +13,7 @@ try {
 
   octokit.issues.createComment({
     ...github.context.repo,
-    issue_id: issueId,
+    issue_number: issueId,
     body: "*I see you*"
   });
 
