@@ -13,11 +13,11 @@ try {
   const issueId = github.context.payload.issue.id;
 
   octokit.issues.createComment({
-      repoOwner,
-      repoName,
-      issueId,
-      "*I see you*"
+    ...github.context.repo,
+    issue_id: issueId,
+    body: "*I see you*"
   });
+
 } catch(error) {
   core.setFailed(error.message);
 }
