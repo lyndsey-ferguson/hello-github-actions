@@ -8,13 +8,13 @@ async function run() {
     const myToken = core.getInput('repo-token');
     const octokit = new github.GitHub(myToken);
     const issue = github.context.payload.issue;
-    const issueId = issue.id;
+    const issueNumber = issue.number;
   
     console.log(`issue id: ${issueId}`);
   
     octokit.issues.createComment({
       ...github.context.repo,
-      issue_number: issueId,
+      issue_number: issueNumber,
       body: "*I see you*"
     }).then(({ data, headers, status }) => {
       // handle data
