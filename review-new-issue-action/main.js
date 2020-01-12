@@ -7,8 +7,9 @@ try {
   const myToken = core.getInput('myToken');
   const octokit = new github.GitHub(myToken);
   const issue = github.context.payload.issue;
-  console.log(`issue info: ${JSON.stringify(issue)}`);
-  const issueId = github.context.payload.issue.id;
+  const issueId = issue.id;
+
+  console.log(`issue id: ${issueId}`);
 
   octokit.issues.createComment({
     ...github.context.repo,
