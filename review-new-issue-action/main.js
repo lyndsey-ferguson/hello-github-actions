@@ -17,7 +17,7 @@ async function run() {
       let supportQuestionLabel = null
       octokit.issues.getLabel({
         ...github.context.repo,
-        supportQuestionLabelString
+        name: supportQuestionLabelString
       }).then(({data, headers, status}) => {
         // handle data
         console.log(`getLabel data: ${data}`);
