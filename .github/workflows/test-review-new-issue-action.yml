@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to review a new issue for fulfilled requirements
     steps:
-      - name: Review New Issue Step
+      - uses: actions/checkout@master
+      - uses: ./review-new-issue-action@v1
+        name: Review New Issue Step
         id: review
-        uses: actions/checkout@master
-        uses: ./review-new-issue-action
 
